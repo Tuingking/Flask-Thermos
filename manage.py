@@ -5,10 +5,8 @@ This module depend on flask-script
 """
 
 from thermos import app, db
-from flask.ext.script import Manager, prompt_bool
-
-from thermos import db
-from models import User
+from thermos.models import User
+from flask_script import Manager, prompt_bool
 
 manager = Manager(app)
 
@@ -16,6 +14,9 @@ manager = Manager(app)
 def initdb():
     """Initialized the database"""
     db.create_all()
+    db.session.add(User(username="aloysius", email="aloysius@example.com"))
+    db.session.add(User(username="yoko", email="yoko@example.com "))
+    db.session.commit()
     print 'Initialized the database...'
 
 @manager.command
