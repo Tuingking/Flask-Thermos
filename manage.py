@@ -14,8 +14,8 @@ manager = Manager(app)
 def initdb():
     """Initialized the database"""
     db.create_all()
-    db.session.add(User(username="aloysius", email="aloysius@example.com"))
-    db.session.add(User(username="yoko", email="yoko@example.com "))
+    db.session.add(User(username="aloysius", email="aloysius@example.com", password="test"))
+    db.session.add(User(username="yoko", email="yoko@example.com ", password="test"))
     db.session.commit()
     print 'Initialized the database...'
 
