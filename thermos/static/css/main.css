@@ -229,11 +229,6 @@ ul.bookmarks {
     padding: 1em 0;
 }
 
-ul.bookmarks li {
-    padding: 15px 0;
-    border-bottom: 1px solid #666;
-}
-
 a.header {
     color: #326786;
     text-decoration: none;
