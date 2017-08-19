@@ -20,7 +20,7 @@ class Bookmark(db.Model):
     description = db.Column(db.String(300))
     user_id = db.Column(db.ForeignKey('user.id'), nullable=False)
     _tags = db.relationship('Tag',
-                            secondary=tags,
+                            secondary=tags, lazy="dynamic",
                             backref=db.backref('bookmarks', lazy='dynamic'))
 
     @staticmethod

@@ -36,7 +36,9 @@ Thermos -- {{ title }}
 <script src="{{ url_for('static', filename='js/vendor/select2.min.js') }}"></script>
 <script>
 $(document).ready(function(){
+    var x = {{ all_tags()|map(attribute='name')|list|tojson }}
     var _tags = {{ all_tags()|map(attribute='name')|list|tojson|safe }};
+    console.log(x)
     $('#tags').select2({tags: _tags, tokenSeparators: [",", " "]});
 });
 </script>
